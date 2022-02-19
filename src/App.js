@@ -1,12 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom'
+import LandingPage from './components/LandingPage';
+import ContactMe from './components/ContactMe';
+import { Header, Footer } from './components/HeaderFooter'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Hii!! I'm your new portfolio!
-      </header>
+    <div className="app-container">
+      <Header/>
+      <Routes>
+        <Route exact path="/" element={<LandingPage/>}/>
+        <Route path="/contact" element={<ContactMe/>}/>
+        
+
+      </Routes>
+      <Footer/>
+
+    {/* APP CONTAINER DIV ENDS HERE */}
     </div>
   );
 }
